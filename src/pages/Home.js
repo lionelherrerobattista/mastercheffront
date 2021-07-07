@@ -161,6 +161,7 @@ const Home = () => {
     })
   }
 
+
   return (
     <div className="container">
      <Header title={"MasterChef"} />
@@ -179,6 +180,7 @@ const Home = () => {
         data={cocineros} //para renderizar
         bajaCocinero={bajaCocinero} //manejador botón click
         setEditado={setEditado} //para seleccionar el cocinero a editar
+        modificarCocinero={modificarCocinero}
         />
       }
      

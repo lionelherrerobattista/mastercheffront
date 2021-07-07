@@ -40,7 +40,6 @@ const Login = () => {
           return res.ok ? res.json() : Promise.reject(res);
         })
         .then((data) => {
-          console.log(data);
           handlerReset();
 
           localStorage.setItem("token", JSON.stringify(data.token));
@@ -48,6 +47,7 @@ const Login = () => {
           history.push("/home");
         })
         .catch((err) => {
+            alert("Ususario o contraseña incorrectos");
             console.log(err);
         });        
     }

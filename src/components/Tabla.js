@@ -1,7 +1,7 @@
 import React from 'react';
 import Row from './Row';
 
-const Tabla = ({data, bajaCocinero, setEditado}) => {
+const Tabla = ({data, bajaCocinero, setEditado, modificarCocinero}) => {
     return ( 
         <div className="contenedor-tabla">
             <table>
@@ -9,6 +9,8 @@ const Tabla = ({data, bajaCocinero, setEditado}) => {
                     <tr>
                         <th>Nombre</th>
                         <th>Especialidad</th>
+                        <th>Favorito</th>
+                        <th>Cantidad de Capitulos</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -16,7 +18,7 @@ const Tabla = ({data, bajaCocinero, setEditado}) => {
                    {
                        data.length === 0? <tr><td colSpan="3">Sin Resultados</td></tr> : 
                        data.map(elemento => <Row key={elemento.id} cocinero={elemento} 
-                        handlerUpdate={setEditado} handlerDelete={bajaCocinero}/>)
+                        handlerUpdate={setEditado} handlerDelete={bajaCocinero} modificarCocinero={modificarCocinero}/>)
                    }
                 </tbody>
             </table>

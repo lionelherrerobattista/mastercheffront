@@ -54,6 +54,7 @@ const Registro = () => {
             })
             .catch((err) => {
                 console.log(err);
+                alert("La contraseña tiene que tener más de 6 caracteres");
             });     
         } else {
             window.alert("Las password no coinciden");
